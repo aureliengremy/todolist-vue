@@ -1,89 +1,140 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'montserrat', sans-serif;
 }
 
 body {
-  margin: 0;
+  background-color: #eeeeee;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+.sketchy {
+  padding: 3rem 6rem;
+  display: inline-block;
+  border: 3px solid #333333;
+  font-size: 1.2rem;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+  /* letter-spacing: 0.3ch; */
+  background: #ffffff;
+  position: relative;
+  
+}
+.sketchy::before {
+    content: '';
+    border: 2px solid #353535;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -10;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+    border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+}
+
+.greeting, .create-todo, .todo-list {
+  margin: 20px 0;
+}
+
+.box{
+  font-size: 0.9rem;
+  margin:5px;
+  padding:5px;
+  background:#fff;
+  border: solid black;
+  border-color: black;
+  border-width: 3px 4px 3px 5px;
+  border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
+}
+.box.bottom {
+  border: solid rgba(0, 0, 0, 0.249);
+}
+.w-100 {
+  width: 100%;
+  padding: 20px;
+}
+
+h3 {
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+h4 {
+  margin-top: 10px;
+}
+.options {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+.options span {
+  margin-left: 5px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.button {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+/* BUTTON PAPER */
+.button-paper {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-.card {
-  padding: 2em;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.button-paper:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-paper:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+.button-paper.delete {
+  background-color: #f54646;
+  padding: .25rem .55rem;
+  color:#eeeeee
+}
+
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-evenly;
 }
